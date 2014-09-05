@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -17,6 +18,11 @@
 
 package org.apache.spark.examples
 
+=======
+package org.apache.spark.examples
+
+
+>>>>>>> 36777187422b0d42bd82b115d600f3f42790b618
 import _root_.org.apache.spark.SparkConf
 import _root_.org.apache.spark.serializer.JavaSerializer
 import _root_.org.apache.spark.util.ClosureCleaner
@@ -25,8 +31,12 @@ import _root_.org.apache.spark.util.ClosureCleaner
  * Created by luluorta on 14-8-3.
  */
 
+<<<<<<< HEAD
 private[spark] class ClosureConstructor(private[ClosureConstructor] val func: () => Unit)
   extends Serializable {
+=======
+private[spark] class ClosureConstructor(private[ClosureConstructor] val func: () => Unit) extends Serializable {
+>>>>>>> 36777187422b0d42bd82b115d600f3f42790b618
   def call() {
     func()
   }
@@ -41,7 +51,11 @@ private[spark] object ClosureConstructor {
     val cc2 = new ClosureConstructor(() => cc1.func())
     val cc3 = new ClosureConstructor(() => cc2.func())
     i += 3
+<<<<<<< HEAD
     ClosureCleaner.clean(cc3.func)
+=======
+    //ClosureCleaner.clean(cc3.func)
+>>>>>>> 36777187422b0d42bd82b115d600f3f42790b618
     val cc4 = new ClosureConstructor(cc3.func)
     i += 2
     cc4
